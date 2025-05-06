@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-body antialiased;
+    image-rendering: pixelated;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-pixel;
+  }
+}
+
+@layer components {
+  .pixel-corners {
+    clip-path: polygon(0 4px,
+        4px 4px,
+        4px 0,
+        calc(100% - 4px) 0,
+        calc(100% - 4px) 4px,
+        100% 4px,
+        100% calc(100% - 4px),
+        calc(100% - 4px) calc(100% - 4px),
+        calc(100% - 4px) 100%,
+        4px 100%,
+        4px calc(100% - 4px),
+        0 calc(100% - 4px));
+  }
+
+  .pixel-border {
+    @apply border-2 shadow-[4px_4px_0px_0px_rgba(0, 0, 0, 0.8)];
+  }
+
+  .quest-card {
+    @apply bg-neutral-800/80 backdrop-blur-sm rounded-lg pixel-border border-primary-500 p-4 transition-all duration-300 cursor-pointer hover:shadow-lg hover:border-secondary-500;
+  }
+
+  .btn {
+    @apply px-4 py-2 font-pixel text-sm rounded-none pixel-corners transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 pixel-border border-primary-700;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-500 text-neutral-900 hover:bg-secondary-600 active:bg-secondary-700 pixel-border border-secondary-700;
+  }
+
+  .btn-accent {
+    @apply bg-accent-500 text-neutral-900 hover:bg-accent-600 active:bg-accent-700 pixel-border border-accent-700;
+  }
+
+  .input {
+    @apply px-3 py-2 bg-neutral-800 border-2 border-primary-500 rounded-none pixel-corners focus:outline-none focus:border-secondary-500;
+  }
+
+  .badge {
+    @apply px-2 py-1 text-xs font-pixel rounded-none pixel-corners;
+  }
+
+  .badge-primary {
+    @apply bg-primary-500/20 text-primary-300 border border-primary-500;
+  }
+
+  .badge-secondary {
+    @apply bg-secondary-500/20 text-secondary-300 border border-secondary-500;
+  }
+
+  .badge-accent {
+    @apply bg-accent-500/20 text-accent-300 border border-accent-500;
+  }
+
+  .scroll-appearance {
+    @apply bg-neutral-800/90 backdrop-blur-sm border-2 border-secondary-500;
+  }
+}
+
+/* Pixel art animations */
+.pixel-transition {
+  transition: all 0.3s steps(3, end);
+}
+
+.pixel-scale {
+  transform: scale(1);
+  transition: transform 0.2s steps(5, end);
+}
+
+.pixel-scale:hover {
+  transform: scale(1.1);
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 border-2 border-primary-700;
+  image-rendering: pixelated;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400;
+}
