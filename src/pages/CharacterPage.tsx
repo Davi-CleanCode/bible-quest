@@ -32,7 +32,7 @@ const CharacterPage: React.FC = () => {
   };
 
   const handleReset = () => {
-    if (confirm('Are you sure you want to reset your progress? This cannot be undone.')) {
+    if (confirm('Tem certeza de que deseja redefinir seu progresso? Esta ação não pode ser desfeita.')) {
       logout();
     }
   };
@@ -41,10 +41,10 @@ const CharacterPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
         <h1 className="font-heading text-3xl font-bold text-secondary-800">
-          Character Sheet
+          Ficha de Personagem
         </h1>
         <p className="text-neutral-600 mt-2">
-          Manage your hero and view achievements
+          Gerencie seu herói e visualize conquistas
         </p>
       </div>
 
@@ -54,11 +54,11 @@ const CharacterPage: React.FC = () => {
             {editMode ? (
               <div>
                 <h2 className="font-heading text-xl text-secondary-800 mb-4">
-                  Edit Character
+                  Editar personagem
                 </h2>
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">
-                    Hero Name
+                    Nome do Heroi
                   </label>
                   <input
                     type="text"
@@ -71,7 +71,7 @@ const CharacterPage: React.FC = () => {
 
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-neutral-700 mb-2">
-                    Choose Avatar
+                    Escolha Avatar
                   </label>
                   <div className="grid grid-cols-2 gap-3">
                     {AVATARS.map((avatarOption) => (
@@ -97,10 +97,10 @@ const CharacterPage: React.FC = () => {
                     onClick={() => setEditMode(false)}
                     className="btn bg-neutral-200 text-neutral-800 hover:bg-neutral-300"
                   >
-                    Cancel
+                    Cancelar
                   </button>
                   <button onClick={handleSave} className="btn btn-primary">
-                    Save Changes
+                    Salvar alterações
                   </button>
                 </div>
               </div>
@@ -119,7 +119,7 @@ const CharacterPage: React.FC = () => {
                 <div className="mt-6 pt-6 border-t border-neutral-200">
                   <div className="mb-4">
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-neutral-600">Experience</span>
+                      <span className="text-neutral-600">experiencia</span>
                       <span className="font-medium">{user.experience} / {user.level * 100}</span>
                     </div>
                     <div className="w-full bg-neutral-200 rounded-full h-2">
@@ -132,8 +132,8 @@ const CharacterPage: React.FC = () => {
 
                   <div className="mb-4">
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-neutral-600">Daily Streak</span>
-                      <span className="font-medium">{user.streak} days</span>
+                      <span className="text-neutral-600">Sequência Diária</span>
+                      <span className="font-medium">{user.streak} dias</span>
                     </div>
                     <div className="flex space-x-1 mt-2">
                       {Array.from({ length: 7 }, (_, i) => (
@@ -151,14 +151,14 @@ const CharacterPage: React.FC = () => {
                     onClick={() => setEditMode(true)}
                     className="btn btn-secondary text-sm"
                   >
-                    Edit Character
+                    Editar personagem
                   </button>
                   <button
                     onClick={handleReset}
                     className="btn bg-error-100 text-error-700 hover:bg-error-200 text-sm"
                   >
                     <Undo className="h-4 w-4 mr-1" />
-                    Reset
+                    Reiniciar
                   </button>
                 </div>
               </div>
@@ -169,7 +169,7 @@ const CharacterPage: React.FC = () => {
         <div className="md:col-span-2">
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="font-heading text-xl text-secondary-800 mb-4">
-              Achievements
+              Conquistas
             </h2>
             <div className="space-y-4">
               {achievements.map((achievement) => (
@@ -196,7 +196,7 @@ const CharacterPage: React.FC = () => {
                   </div>
                   {achievement.unlocked && (
                     <div className="ml-auto">
-                      <div className="badge badge-primary">Unlocked</div>
+                      <div className="badge badge-primary">Desbloqueado</div>
                     </div>
                   )}
                 </div>
@@ -205,23 +205,23 @@ const CharacterPage: React.FC = () => {
 
             <div className="mt-8">
               <h2 className="font-heading text-xl text-secondary-800 mb-4">
-                Stats
+                Estatísticas
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-200">
                   <h3 className="text-sm font-medium text-neutral-700">Longest Streak</h3>
-                  <p className="text-2xl font-bold text-secondary-800 mt-1">{user.streak} days</p>
+                  <p className="text-2xl font-bold text-secondary-800 mt-1">{user.streak} dias</p>
                 </div>
                 <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-200">
-                  <h3 className="text-sm font-medium text-neutral-700">Chapters Read</h3>
+                  <h3 className="text-sm font-medium text-neutral-700">Capitlos lidos</h3>
                   <p className="text-2xl font-bold text-secondary-800 mt-1">{user.chaptersCompleted}</p>
                 </div>
                 <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-200">
-                  <h3 className="text-sm font-medium text-neutral-700">Books Completed</h3>
+                  <h3 className="text-sm font-medium text-neutral-700">Livros concluídos</h3>
                   <p className="text-2xl font-bold text-secondary-800 mt-1">0 / 66</p>
                 </div>
                 <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-200">
-                  <h3 className="text-sm font-medium text-neutral-700">Total Experience</h3>
+                  <h3 className="text-sm font-medium text-neutral-700">Experiência Total</h3>
                   <p className="text-2xl font-bold text-secondary-800 mt-1">{user.experience} XP</p>
                 </div>
               </div>

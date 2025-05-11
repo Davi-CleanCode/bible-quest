@@ -12,7 +12,7 @@ const NotFoundPage: React.FC = () => {
           Quest Not Found
         </h1>
         <p className="text-neutral-600 mb-8">
-          It seems like you've wandered off the map, brave hero. This path leads nowhere.
+          Parece que você sumiu do mapa, bravo herói. Este caminho não leva a lugar nenhum.
         </p>
         <button
           onClick={() => navigate('/')}

@@ -27,10 +27,10 @@ const DashboardPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
         <h1 className="font-heading text-3xl font-bold text-secondary-800">
-          Welcome, <span className="text-primary-600">{user.name}</span>!
+          Bem-Vindo, <span className="text-primary-600">{user.name}</span>!
         </h1>
         <p className="text-neutral-600 mt-2">
-          Your spiritual journey continues today. Are you ready for new quests?
+          Sua jornada espiritual continua hoje. Você está pronto para novas jornadas?
         </p>
       </div>
 
@@ -40,38 +40,38 @@ const DashboardPage: React.FC = () => {
             <BookOpen className="h-6 w-6 text-primary-600" />
           </div>
           <div>
-            <p className="text-sm text-neutral-500">Chapters Completed</p>
+            <p className="text-sm text-neutral-500">Capítulos concluídos</p>
             <p className="text-2xl font-bold text-secondary-800">{user.chaptersCompleted}</p>
           </div>
         </div>
-        
+
         <div className="bg-white rounded-lg shadow p-4 flex items-center">
           <div className="rounded-full bg-secondary-100 p-3 mr-4">
             <Award className="h-6 w-6 text-secondary-600" />
           </div>
           <div>
-            <p className="text-sm text-neutral-500">Hero Level</p>
+            <p className="text-sm text-neutral-500">Nível de herói</p>
             <p className="text-2xl font-bold text-secondary-800">{user.level}</p>
           </div>
         </div>
-        
+
         <div className="bg-white rounded-lg shadow p-4 flex items-center">
           <div className="rounded-full bg-accent-100 p-3 mr-4">
             <TrendingUp className="h-6 w-6 text-accent-600" />
           </div>
           <div>
-            <p className="text-sm text-neutral-500">Experience</p>
+            <p className="text-sm text-neutral-500">Experiencia</p>
             <p className="text-2xl font-bold text-secondary-800">{user.experience}</p>
           </div>
         </div>
-        
+
         <div className="bg-white rounded-lg shadow p-4 flex items-center">
           <div className="rounded-full bg-warning-100 p-3 mr-4">
             <Zap className="h-6 w-6 text-warning-500" />
           </div>
           <div>
-            <p className="text-sm text-neutral-500">Current Streak</p>
-            <p className="text-2xl font-bold text-secondary-800">{user.streak} days</p>
+            <p className="text-sm text-neutral-500">Sequência Atual</p>
+            <p className="text-2xl font-bold text-secondary-800">{user.streak} dias</p>
           </div>
         </div>
       </div>
@@ -80,23 +80,23 @@ const DashboardPage: React.FC = () => {
         <div className="lg:col-span-2">
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="font-heading text-xl font-bold text-secondary-800 mb-4">
-              Progress Overview
+              Visão geral do progresso
             </h2>
             <ProgressChart chaptersCompleted={user.chaptersCompleted} />
           </div>
         </div>
-        
+
         <div>
           <div className="bg-white rounded-lg shadow p-6 mb-6">
             <h2 className="font-heading text-xl font-bold text-secondary-800 mb-4">
-              Today's Quest
+              A missão de hoje
             </h2>
             <DailyQuest />
           </div>
-          
+
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="font-heading text-xl font-bold text-secondary-800 mb-4">
-              Current Book
+              Livro atual
             </h2>
             <div className="scroll-appearance rounded-md p-4">
               <h3 className="font-heading text-lg text-primary-800">Genesis</h3>
@@ -107,14 +107,14 @@ const DashboardPage: React.FC = () => {
                 ></div>
               </div>
               <p className="text-sm text-neutral-700">
-                3 of 50 chapters completed
+                ? de ? capitulos concluidos
               </p>
             </div>
             <button
               onClick={() => navigate('/quests/genesis')}
               className="btn btn-secondary w-full mt-4"
             >
-              Continue Quest
+              Continuar missão
             </button>
           </div>
         </div>
