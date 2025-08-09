@@ -26,7 +26,7 @@ const QuestsPage: React.FC = () => {
           Old Testament
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {bibleBooks.filter(book => book.testament === 'old').map(book => (
+          {bibleBooks.filter(book => book.testament === 'antigo').map(book => (
             <div 
               key={book.id}
               onClick={() => handleBookSelect(book.id)}
@@ -45,8 +45,8 @@ const QuestsPage: React.FC = () => {
                 <span className="text-neutral-500">
                   {book.chapters} chapters
                 </span>
-                <span className={`badge ${book.difficulty === 'easy' ? 'badge-success' : book.difficulty === 'medium' ? 'badge-warning' : 'badge-error'}`}>
-                  {book.difficulty}
+                <span className={`badge ${book.difficulty === 'facil' ? 'badge-success' : book.difficulty === 'medio' ? 'badge-warning' : 'badge-error'}`}>
+                  {book.difficulty === 'facil' ? 'Fácil' : book.difficulty === 'medio' ? 'Médio' : 'Difícil'}
                 </span>
               </div>
             </div>
@@ -59,7 +59,7 @@ const QuestsPage: React.FC = () => {
           New Testament
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {bibleBooks.filter(book => book.testament === 'new').map(book => (
+          {bibleBooks.filter(book => book.testament === 'novo').map(book => (
             <div 
               key={book.id}
               onClick={() => handleBookSelect(book.id)}
@@ -78,8 +78,8 @@ const QuestsPage: React.FC = () => {
                 <span className="text-neutral-500">
                   {book.chapters} chapters
                 </span>
-                <span className={`badge ${book.difficulty === 'easy' ? 'badge-success' : book.difficulty === 'medium' ? 'badge-warning' : 'badge-error'}`}>
-                  {book.difficulty}
+                <span className={`badge ${book.difficulty === 'facil' ? 'badge-success' : book.difficulty === 'medio' ? 'badge-warning' : 'badge-error'}`}>
+                  {book.difficulty === 'facil' ? 'Fácil' : book.difficulty === 'medio' ? 'Médio' : 'Difícil'}
                 </span>
               </div>
             </div>

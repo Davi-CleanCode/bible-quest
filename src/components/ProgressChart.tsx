@@ -5,9 +5,7 @@ interface ProgressChartProps {
 }
 
 const ProgressChart: React.FC<ProgressChartProps> = ({ chaptersCompleted }) => {
-  // Espaço reservado simples para um gráfico de progresso
-  // Em um aplicativo real, você pode usar uma biblioteca como Chart.js ou recharts
-  const totalChapters = 1189; // Total de capítulos da Bíblia
+  const totalChapters = 1189;
   const percentComplete = (chaptersCompleted / totalChapters) * 100;
 
   return (
